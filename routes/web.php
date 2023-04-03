@@ -39,3 +39,14 @@ Route::get('show/{id}', function ($id) {
     $task = $tasks[$id];
     return view('show',compact('task'));
 });
+Route::get('contact','Taskcontroller@index');
+Route::get('about','Taskcontroller@show_name');
+Route::get('about','Taskcontroller@send_name');
+Route::get('contact/{id}','Taskcontroller@index');
+//Route::get('contact/{id}', [TaskController::class, 'index']);
+Route::get('app', function () {
+    return view('layout.app');
+});
+Route::get('task', function () {
+    return view('task');
+});
